@@ -8,7 +8,36 @@
   background-color: #f0f0f0;
 }
 
+.app-container {
+  display: inline-flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 600px;
+}
+
 .title {
-  font-size: 2rem;
-  margin-top: 20px;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.todo {
+  border: 1px solid black;
+  min-height: 5vh;
+  border-radius: 8px;
+}
+
+.todo-container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+}
+
+.todo-list {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 1em;
 }
