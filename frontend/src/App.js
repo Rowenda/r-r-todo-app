@@ -3,9 +3,11 @@ import './App.css';
 
 import { useState, useEffect } from 'react';
 
-import { getTodos } from './api/endpoints';
+import { getTodos, createTodo, delete_todo } from './api/endpoints';
 
 import Todolist from './components/Todolist';
+
+import AddTodo from './components/AddTodo';
 
 function App() {
 
@@ -20,11 +22,22 @@ function App() {
     fetchTodos();
   }, []);
 
+  const addTodo = async (todo_name) => {
+    const todo = await createTodo(todo_name);
+    setTodos([todo, ...todos]);
+  }
+
+  const deleteTodo = async (id) => {
+    await delete_todo(id);
+    setTodos(todos.filter((todo) => todo.id !== id));
+  }
+
   return (
     <div className="App">
       <div className="app-container">
         <h1 className="title">Todo App</h1>
-          <Todolist todos={todos} />
+          <AddTodo addTodo={addTodo} />
+          <Todolist todos={todos} deleteTodo={deleteTodo} />
       </div>
     </div>
   );

@@ -41,3 +41,22 @@
   gap: 2em;
   margin-top: 1em;
 }
+
+.add-todo {
+  margin-top: 1em;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.add-input {
+  width: 80%;
+  height: 2em;
+}
+
+.add-button {
+  width: 20%;
+  height: 100%;
+}
